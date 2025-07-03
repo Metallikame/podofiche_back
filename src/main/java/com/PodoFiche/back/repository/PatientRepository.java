@@ -1,6 +1,6 @@
-package com.PodoFiche.back.repository;
+package com.podofiche.back.repository;
 
-import com.PodoFiche.back.bo.Patient;
+import com.podofiche.back.bo.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.PodoFiche.back.controllers;
+package com.podofiche.back.controllers;
 
-import com.PodoFiche.back.bo.Journal;
-import com.PodoFiche.back.repository.JournalRepository;
+import com.podofiche.back.bo.Journal;
+import com.podofiche.back.repository.JournalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +13,12 @@ import java.util.List;
 @RequestMapping("/api/journaux")
 public class JournalController {
 
+    private final JournalRepository journalRepository;
+
     @Autowired
-    private JournalRepository journalRepository;
+    public JournalController(JournalRepository journalRepository) {
+        this.journalRepository = journalRepository;
+    }
 
     @GetMapping
     public List<Journal> getAllJournaux() {

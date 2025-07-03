@@ -1,6 +1,6 @@
-package com.PodoFiche.back.repository;
+package com.podofiche.back.repository;
 
-import com.PodoFiche.back.bo.TypeConsultation;
+import com.podofiche.back.bo.TypeConsultation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TypeConsultationRepository extends JpaRepository<TypeConsultation, Long> {
