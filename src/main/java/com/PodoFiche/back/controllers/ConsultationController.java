@@ -1,7 +1,7 @@
-package com.PodoFiche.back.controllers;
+package com.podofiche.back.controllers;
 
-import com.PodoFiche.back.bo.Consultation;
-import com.PodoFiche.back.repository.ConsultationRepository;
+import com.podofiche.back.bo.Consultation;
+import com.podofiche.back.repository.ConsultationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +13,12 @@ import java.util.List;
 @RequestMapping("/api/consultations")
 public class ConsultationController {
 
+    private final ConsultationRepository consultationRepository;
+
     @Autowired
-    private ConsultationRepository consultationRepository;
+    public ConsultationController(ConsultationRepository consultationRepository) {
+        this.consultationRepository = consultationRepository;
+    }
 
     @GetMapping
     public List<Consultation> getAllConsultations() {

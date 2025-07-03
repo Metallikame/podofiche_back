@@ -1,7 +1,7 @@
-package com.PodoFiche.back.controllers;
+package com.podofiche.back.controllers;
 
-import com.PodoFiche.back.bo.Utilisateur;
-import com.PodoFiche.back.repository.UtilisateurRepository;
+import com.podofiche.back.bo.Utilisateur;
+import com.podofiche.back.repository.UtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +13,12 @@ import java.util.List;
 @RequestMapping("/api/utilisateurs")
 public class UtilisateurController {
 
+    private final UtilisateurRepository utilisateurRepository;
+
     @Autowired
-    private UtilisateurRepository utilisateurRepository;
+    public UtilisateurController(UtilisateurRepository utilisateurRepository) {
+        this.utilisateurRepository = utilisateurRepository;
+    }
 
     @GetMapping
     public List<Utilisateur> getAllUtilisateurs() {

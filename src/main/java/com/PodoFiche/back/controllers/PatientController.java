@@ -1,7 +1,7 @@
-package com.PodoFiche.back.controllers;
+package com.podofiche.back.controllers;
 
-import com.PodoFiche.back.bo.Patient;
-import com.PodoFiche.back.repository.PatientRepository;
+import com.podofiche.back.bo.Patient;
+import com.podofiche.back.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +13,12 @@ import java.util.List;
 @RequestMapping("/api/patients")
 public class PatientController {
 
+    private final PatientRepository patientRepository;
+
     @Autowired
-    private PatientRepository patientRepository;
+    public PatientController(PatientRepository patientRepository) {
+        this.patientRepository = patientRepository;
+    }
 
     @GetMapping
     public List<Patient> getAllPatients() {

@@ -1,6 +1,6 @@
-package com.PodoFiche.back.repository;
+package com.podofiche.back.repository;
 
-import com.PodoFiche.back.bo.Consultation;
+import com.podofiche.back.bo.Consultation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;

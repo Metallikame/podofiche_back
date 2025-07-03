@@ -1,4 +1,4 @@
-package com.PodoFiche.back.bo;
+package com.podofiche.back.bo;
 
 import jakarta.persistence.*;
 
